@@ -1,0 +1,16 @@
+.label-group {
+    display: inline-block;
+}
+
+.label-group .box{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.label-group .label{
+    display: inline-block;
+    font-size: 1em;
+    word-break: break-all;
+}

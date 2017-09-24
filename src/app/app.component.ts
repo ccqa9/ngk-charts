@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Data } from "app/pie-chart/data";
 import { Config } from "app/pie-chart/config";
 
@@ -7,7 +7,7 @@ import { Config } from "app/pie-chart/config";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'demo pie chart';
   dataset: Data[] = [
     { value : 20, label : 'data1' },
@@ -18,15 +18,27 @@ export class AppComponent {
   ];
   config = new Config();
 
+  ngAfterViewInit(){
+    setTimeout(t => {
+      let newData = [];
+      let length = Math.floor(Math.random()*(10 + 1 - 3)) + 3;
+      for (var index = 0; index < length; index++) {
+        newData.push({ value : (Math.floor(Math.random() * (10 + 1 - 1)) + 1) * 10, label: 'data'});
+      }
+      this.dataset = newData;
+    }, 3000)
+  }
+
   onClick(event){
-    console.log(event);
+
   }
 
   onMouseenter(event){
-    console.log(event);
+
   }
 
   onMouseleave(event){
-    console.log(event);
+
   }
+
  }

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input, HostListener, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, HostListener, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Data } from "app/pie-chart/data";
 
 @Component({
@@ -10,7 +10,8 @@ import { Data } from "app/pie-chart/data";
     </div>
   `,
   styleUrls:['./pie-chart-label.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PieChartLabelComponent implements OnInit {
   @Input() label: string;

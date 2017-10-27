@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Data } from "app/pie-chart/data";
-import { Config } from "app/pie-chart/config";
+import { PieChartConfig } from "app/pie-chart/config";
+import { LineChartConfig } from "app/line-chart/config";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent implements AfterViewInit {
     { value : 30, label : 'data4' },
     { value : 10, label : 'data5' }
   ];
-  config = new Config();
+  pieChartConfig = new PieChartConfig();
+  lineChartConfig = new LineChartConfig();
 
   ngAfterViewInit(){
     setTimeout(t => {

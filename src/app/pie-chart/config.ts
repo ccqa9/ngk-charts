@@ -1,4 +1,4 @@
-export class Config{
+export class PieChartConfig{
     
   background_color: string = "#ffffff";
 

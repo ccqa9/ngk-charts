@@ -2,12 +2,12 @@ import { Component, OnInit, NgModule, ElementRef, ViewChild, AfterViewInit, Inpu
 import { CommonModule } from "@angular/common/src/common";
 
 import * as d3 from "d3";
-import { Config } from "app/pie-chart/config";
+import { PieChartConfig } from "app/pie-chart/config";
 import { Data } from "app/pie-chart/data";
 
 @Component({
   selector: 'ngk-pie-chart',
-  template: `<div #container class="container" 
+  template: `<div #container class="chart-container" 
     [style.width]="width" [style.height]="height"></div>`,
   encapsulation: ViewEncapsulation.None,
   styles:[
@@ -33,7 +33,7 @@ export class PieChartComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() dataset: Data[];
 
-  @Input() config: Config;
+  @Input() config: PieChartConfig;
 
   @Input() width: any;
 
@@ -86,8 +86,8 @@ export class PieChartComponent implements OnInit, AfterViewInit, OnChanges {
     this.svg = d3.select(this.container.nativeElement)
             .append('svg')
             .attr("class", "svg-container")
-            .attr("width", this.container.nativeElement.scrollWidth)
-            .attr("height", this.container.nativeElement.scrollWidth)
+            .attr("width", this.container.nativeElement.offsetWidth)
+            .attr("height", this.container.nativeElement.offsetHeight)
             .attr("style", "background-color : " + this.config.background_color)
     this.pieGraph = this.svg.append("g").attr("class", "pie-graph")
 

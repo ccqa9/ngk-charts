@@ -1,5 +1,5 @@
 <div id="container">
-  <ngk-pie-chart [dataset]="dataset" [config]="config"
+  <ngk-pie-chart *ngIf="dataset" [dataset]="dataset" [config]="pieChartConfig"
     [width]="'300px'" [height]="'300px'"
     (click)="onClick($event)" (mouseenter)="onMouseenter($event)" (mouseleave)="onMouseleave($event)">
   </ngk-pie-chart>
@@ -8,9 +8,13 @@
     <ul>
       <li *ngFor="let data of dataset; let i = index;">
         <ngk-pie-chart-label [label]="data.label"
-          [color]="config.colors[i]"></ngk-pie-chart-label>
+          [color]="pieChartConfig.colors[i]"></ngk-pie-chart-label>
       </li>
     </ul>
   </div>
+
+  <ngk-line-chart *ngIf="dataset" [dataset]="dataset" [config]="lineChartConfig"
+    [style.width]="'300px'" [style.height]="'300px'">
+  </ngk-line-chart>
 </div>
 

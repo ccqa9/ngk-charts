@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PieChartModule } from "app/pie-chart/pie-chart.module";
+import { LineChartModule } from "app/line-chart/line-chart.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { PieChartModule } from "app/pie-chart/pie-chart.module";
   ],
   imports: [
     BrowserModule,
-    PieChartModule
+    PieChartModule,
+    LineChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

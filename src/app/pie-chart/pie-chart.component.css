@@ -1,0 +1,36 @@
+:host{
+    display: block;
+    position: relative;
+}
+
+.tooltip{
+    background: #000;
+    color: #ffffff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.pie-chart-label{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.pie-chart-label span{
+    float: left;
+}
+
+.pie-chart-label ul{
+    float: left;
+    display: inline-block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+    list-style-type: none;
+}

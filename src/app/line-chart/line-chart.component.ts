@@ -8,7 +8,6 @@ import { LineChartConfig } from "app/line-chart/config";
   template:  `
     <div #container class="chart-container"></div>
   `,
-  // encapsulation: ViewEncapsulation.None,
   styleUrls:['./../line-chart/line-chart.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

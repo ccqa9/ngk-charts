@@ -8,24 +8,17 @@ import { Data } from "app/pie-chart/data";
 @Component({
   selector: 'ngk-pie-chart',
   template: `<div #container class="chart-container" 
-    [style.width]="width" [style.height]="height"></div>`,
-  encapsulation: ViewEncapsulation.None,
-  styles:[
-    `
-    :host{
-      display: block;
-    }
-
-    .tooltip{
-      background: #000;
-      color: #ffffff;
-      display: inline-block;
-      position: absolute;
-      border-radius: 3px;
-      padding: 4px;
-    }
-    ` 
-  ],
+    [style.width]="width" [style.height]="height"></div>
+    <div class="pie-chart-label">
+      <span>{{title}}</span>
+      <ul>
+        <li *ngFor="let data of dataset; let i = index;">
+          <ngk-pie-chart-label [label]="data.label"
+            [color]="config.colors[i]"></ngk-pie-chart-label>
+        </li>
+      </ul>
+    </div>`,
+  styleUrls:[ './../pie-chart/pie-chart.component.css' ],
   changeDetection: ChangeDetectionStrategy.OnPush  
 })
 export class PieChartComponent implements OnInit, AfterViewInit, OnChanges {
